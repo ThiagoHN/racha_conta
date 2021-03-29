@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:racha_conta/screens/menu.dart';
+import 'package:racha_conta/screens/resultado.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Menu.routeName,
       routes: {
         Menu.routeName: (ctx) => Menu(),
+        Resultado.routeName: (ctx) => Resultado(),
       },
     );
   }

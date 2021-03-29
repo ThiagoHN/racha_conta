@@ -12,13 +12,17 @@ class Resultado extends StatelessWidget {
       appBar: AppBar(
         title: Text('Conta a ser paga'),
       ),
-      body: Column(
-        children: [
-          Text('Preço Total: R\$' + resultados['total'].toString()),
-          Text('Quem não bebeu: R\$' + resultados['individual'].toString()),
-          Text('Quem bebeu: R\$' + resultados['alcool'].toString()),
-          Text('Quem não bebeu: R\$' + resultados['garcom'].toString()),
-        ],)
+      body: Center(
+              child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Preço Total: R\$' + resultados['total'].toStringAsFixed(2), style: TextStyle(fontSize: 24)),
+            Text('Quem não bebeu: R\$' + resultados['individual'].toStringAsFixed(2), style: TextStyle(fontSize: 24)),
+            if(resultados['alcool'] != -1)
+              Text('Quem bebeu: R\$' + resultados['alcool'].toStringAsFixed(2), style: TextStyle(fontSize: 24)),
+            Text('Gorjeta do garçom: R\$' + resultados['garcom'].toStringAsFixed(2), style: TextStyle(fontSize: 24)),
+          ],),
+      )
     );
   }
 }
